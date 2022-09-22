@@ -1,117 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-<script src="vega_lite_vis.js"></script>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-<title>Top 6 economies in the world</title>
-<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"><link rel="stylesheet" href="layout.css">
-<link rel="stylesheet" href="text.css">
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
 
 </head>
+
 <body>
-    <h1>Top 6 economies in the world</h1>
+
+  <div class="page">
+
+    <!-- pure grid group -->
     <div class="pure-g">
-        <div class="pure-u-1">
-
-                    
-        <img src="dots4.png", class="center">
-         </div>
+      <div class="pure-u-1-1">
+        <h1>Multiple Visualisations</h1>
+        <p>This page demonstrates how you can use pure.css grid for your layout.</p>
+      </div>
     </div>
+    <!-- end pure grid group -->
 
-        <div class="pure-g">
-    <div class="pure-u-1-3">
-    
-        <p>Our contemporary societies are driven by capitalism. Every day an uncountable number of goods and services are bought. Competition between companies is huge. <span class="deaths_text"> China, Germany, India, Japan, the United Kingdom and the United States </span> are the big winners based on their GDP in this game. This visualisation shows this and other indicators such as <span class="deaths_text"> import and export, unemployment and total reserves.</span></p>
-        
-    <div id="line_chart">
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2>Two Columns Layout</h2>
+          <p>The first column contains text and the second column contains a visualisation.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
         </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis1" class="vis-container"></div>
+      </div>
     </div>
-        
+    <!-- end pure grid group -->
 
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2>Three Equal Columns</h2>
+          <p>Using all three columns without merging. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat
+            sed. Egestas purus viverra accumsan in nisl. Egestas purus viverra accumsan in nisl.</p>
+        </div>
+      </div>
+      <div class="pure-u-1-3">
+    
+      <div class="pure-u-1-3" style="width: 31.5%;">
+  
+      </div>
 
-<div class="pure-u-2-3">
-        <div id="map">
     </div>
-</div>
-</div>
+    <!-- end pure grid group -->
 
-<div class="pure-g">
-    <div class="pure-u-1-2">
-    <h2>GDP growth between 1991 and 2020 (%)</h2>
-    <p> 1. The GDP of <span class="deaths_text">China</span> has only shown an increase between 1991 and 2020. The highest growth rate was in 2007 with <span class="deaths_text">14.2%</span>. The smallest increase was <span class="deaths_text">2.2%</span> in 2020. </p>  
-    <p> 2. The crisis in <span class="deaths_text">2008</span>, hit <span class="deaths_text">Germany, Japan, the United Kingdom and the United States</span>. China and India show no sigs that they were hit by the crisis.
-    <p> 3. GDP in five countries show a <span class="deaths_text">decrease in 2020</span> due to corona. Only China still had an increase in GDP. The United Kingdom had the biggests decrease of GDP with <span class="deaths_text">9.3%</span>. </p>
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+       
+      <div class="pure-u-1-3">
+        <div class="description description-right">
+          <h2>First and Second Columns Combined</h2>
+          <p>The first and second columns are combined. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+            faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+        </div>
+      </div>
+
     </div>
-    <div class="pure-u-1-2">
-    <div id="heatmap">
-    </div>
-    </div>
-    </div>
+    <!-- end pure grid group -->
 
     <div class="pure-g">
-        <div class="pure-u-1-2">
-    <h2>Import and export as share of GDP in 2020</h2>
-    <p> 1. Germany has the highest share of import and export of the GDP. The share of the import is <span class="deaths_text">37.7%</span> and the share of the export is <span class="deaths_text">43.4%</span>. This means that the import is worth <span class="deaths_text">$1039 billion</span> and the export <span class="deaths_text">$1196 billion</span>.
-    <p> 2. Only <span class="deaths_text">China and Germany</span> have <span class="deaths_text">higher exports</span> than imports. Their imports, however, are still higher than in Japan and the United States.
-    <p> 3. In absolute numbers, <span class="deaths_text">China</span> has the <span class="deaths_text">highest amount</span> of US dollars in import and export. The import and export respectively are worth <span class="deaths_text">$3343 billion</span> and <span class="deaths_text">$385 billion</span>.  </p>
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://fit3179.github.io/Vega-Lite/" target="_blank">FIT3179
+            Teaching Team</a>. The datasource is <a href="#" target=" _blank">some data repository online</href>.</p>
+      </div>
     </div>
 
-    <div class="pure-u-1-2">
-    <div id="grouped_bar_chart">
- </div></div></div>
 
- <div class="pure-g">
- <div class="pure-u-1-2">
- <h2>Unemployement 1991 vs. 2020</h2>
- <p> 1. Percentage of <span class="deaths_text">unemployment</span> is both in 1991 and 2020 <span class="deaths_text">lowest</span> in Japan. In 1991 and 2020 respectively, <span class="deaths_text">2.1%</span> and <span class="deaths_text">2.8%</span> of the labor force was unemployed. </p>
- <p> 2. The <span class="deaths_text">United States</span>  shows in both years high unemployment, <span class="deaths_text">6.8%</span> and <span class="deaths_text">8.1%</span> . In 2020, it has the higest unemployment of all the countries. </p>
- <p> 3. The <span class="deaths_text">highest decrease</span> in unemployment as % of the labor force is the <span class="deaths_text">United Kingdom</span>. Between 1991 and 2020, the unemployment dropped with <span class="deaths_text">4 percentage point</span>.</p>
- </div>
+  </div> <!-- end page -->
 
- <div class="pure-u-1-4">
-    <div id="circle">
-        <p>Unemployment total (% of total labor force)</p>
-    </div></div>
-
-   
-
-
-    <div class="pure-u-1-4 graph">
-    <div id="treemap"></div>
-    
-
-
-    </div></div></div>
-
-   
-
-   
-
-    <div class="pure-g">
-        <div class="pure-u-1-2">
-            <h2>Total reserves between 1991 and 2020</h2>
-            <p> 1. All reserves showed <span class="deaths_text">increase</span> over time.</p>
-    <p> 2. <span class="deaths_text">China</span> shows the <span class="deaths_text">highest growth</span> of total reserves over time. In 1991, their reserves were <span class="deaths_text">$48.2 billion.</span> In 2020, this grew until <span class="deaths_text">$3360 billion</span> .</p>
-    <p> 3. <span class="deaths_text">China</span> also has the <span class="deaths_text">highest reserve</span> in 2020. The reserve is even bigger than all the reserves of all the other countries together <span class="deaths_text">($3056 billion).</span>
-    </div>
-
-    <div class="pure-u-1-2">
-    <div id="streamgraph">
- </div></div></div>
-
-
-    
-
+  <script type="text/javascript">
+    var specVis1 = "./economy_grouped_bar_chart.vg.json";
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+  </script>
 </body>
+
 </html>
