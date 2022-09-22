@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1100,
+  "height": 450,
+
+  "title": "Worldmap of top 6 economies",
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/JiazhouLiu/FIT3179/main/VegaLite/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "Countryplace2.csv"
+      },
+      "mark": {"type": "circle"},
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+      
+ 
+      
+        "color": {
+          "field": "Country",
+          "type": "nominal",
+          "title": "Country",
+          "scale": {"scheme": "set1"},
+          "legend": null
+        },
+        "size": {
+          "field": "GDP in billion (current US$)",
+          "type": "quantitative",
+          "title": "GDP in billion (current US$)",
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "GDP in billion (current US$)", "type": "quantitative"}
+        ]
+      }
+    }
+  ]
+}

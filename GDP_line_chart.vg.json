@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "top_six_economies.csv"
+  },
+  "background": null,
+  "width": 400,
+  "height": 300,
+  "layer": [
+    {
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "GDP per capita (current US$)", "type": "quantitative"},
+        "color": {"field": "Country Name", "type": "nominal"}
+      },
+      "layer": [
+        {"mark": "line"},
+        {
+          "params": [{
+            "name": "label",
+            "select": {
+              "type": "point",
+              "encodings": ["x"],
+              "nearest": true,
+              "on": "mouseover"
+            }
+          }],
+          "mark": "point",
+          "encoding": {
+            "opacity": {
+              "condition": {
+                "param": "label",
+                "empty": false,
+                "value": 1
+              },
+              "value": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "transform": [{"filter": {"param": "label", "empty": false}}],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "gray"},
+          "encoding": {
+            "x": {"type": "temporal", "field": "Year", "aggregate": "min"}
+          }
+        },
+        {
+          "encoding": {
+            "text": {"type": "quantitative", "field": "GDP per capita (current US$)"},
+            "x": {"type": "temporal", "field": "Year", "title": null},
+            "y": {"type": "quantitative", "field": "GDP per capita (current US$)"}
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "stroke": "grey",
+                "strokeWidth": 2,
+                "align": "left",
+                "dx": 5,
+                "dy": -5,
+                "color": "grey"
+              }
+            },
+            {
+              "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
+              "encoding": {
+                "color": {"field": "Country Name", "type": "nominal", "scale": {"scheme": "set1"}, "legend":null
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

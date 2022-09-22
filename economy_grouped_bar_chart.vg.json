@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 230,
+  "background": null,
+
+  "data": {
+    "url": "top_six_economies1.csv"
+  },
+  "repeat": {"layer": ["Imports","Exports"]},
+  "spec": {
+    "mark": "bar",
+    "encoding": {
+      
+
+      "x": {
+        "field": "Country Name",
+        "type": "nominal",
+        "title": null
+      },
+      "y": {
+        "aggregate": "sum",
+        "field": {"repeat": "layer"},
+        "type": "quantitative",
+        "title": "Imports/Exports (% of GDP)"
+      
+      },
+       
+
+
+      "color": {"datum": {"repeat": "layer"}, "title": null,  "scale": {"range": ["#e69fe2", "#2ebcdf"]}},
+      "tooltip": [
+        {"field": "Imports", "type": "quantitative"},
+        {"field": "Exports", "type": "quantitative"}], 
+      "xOffset": {"datum": {"repeat": "layer"}}
+      
+     
+    }
+  },
+  "config": {
+    "mark": {"invalid": null}
+  }
+}

@@ -1,0 +1,25 @@
+
+  {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple radial chart with embedded data.",
+    "background": null,
+    "title": "1991 (% of labor force)",
+    "width": 400,
+    "height": 300,
+    "data": {
+      "values": [2.4, 5.3, 5.6, 2.1, 8.6, 6.8]
+    },
+    "layer": [{
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },{
+      "mark": {"type": "text", "radiusOffset": 10, "stroke": "grey"},
+      "encoding": {
+        "text": {"field": "data", "type": "quantitative"}
+      }
+    }],
+    "encoding": {
+      "theta": {"field": "data", "type": "quantitative", "stack": true},
+      "radius": {"field": "data", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+      "color": {"field": "data", "type": "nominal", "legend": null, "scale": {"range":["#984EA3","#E41A1C", "#377EB8", "#4DAF4A", "#FFFF33", "#FF7F00" ]}}
+    }
+  }

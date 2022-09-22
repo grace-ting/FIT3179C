@@ -1,0 +1,19 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 540,
+    "height": 230,
+    "background": null,
+ 
+    "data": {"url": "top_six_economies.csv"},
+    "mark": "rect",
+    "encoding": {
+      "y": {"field": "Country Name", "type": "nominal", "title":null},
+      "x": {"field": "Year", "type": "ordinal", "title":null},
+   
+    "color": {"aggregate": "mean", "field": "GDP growth (annual %)", "scale": {"scheme": "brownbluegreen"}},
+      "tooltip": {"field": "GDP growth (annual %)", "type": "quantitative"}
+    },
+    "config": {
+      "axis": {"grid": true, "tickBand": "extent"}
+    }
+  }

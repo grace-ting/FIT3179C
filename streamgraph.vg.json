@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 780,
+    "height": 230,
+    "background": null,
+  "data": {"url": "top_six_economies.csv"},
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "year", "field": "Year", "title":null,
+      "axis": {"domain": false, "format": "%Y", "tickSize": 0}
+    },
+    "y": {
+      "aggregate": "sum", "field": "Total reserves in billions (includes gold, current US$)"
+    },
+    "color": {"field": "Country Name", "type": "nominal", "legend": null, "scale": {"scheme": "set1"} }
+  }}
+
+    
+  
