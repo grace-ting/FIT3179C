@@ -23,10 +23,9 @@
         "field": {"repeat": "layer"},
         "type": "quantitative",
         "title": "Imports/Exports (% of GDP)"
-      
       },
-       
-
+           "column": {
+      "field": "Country Name", "type": "nominal"},
 
       "color": {"datum": {"repeat": "layer"}, "title": null,  "scale": {"range": ["#e69fe2", "#2ebcdf"]}},
       "tooltip": [
